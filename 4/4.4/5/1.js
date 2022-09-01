@@ -1,27 +1,15 @@
-'use strict';
-
-let calculator = {
-
-    read() {
-        this.a = +prompt('Введите а');
-        this.b = +prompt('Введите b');
+let ladder = {
+    step: 0,
+    up() {
+      this.step++;
+      return this;
     },
-    sum() {
-        this.check();
-            return this.a + this.b;
-        
+    down() {
+      this.step--;
+      return this;
     },
-    mul() {
-        this.check();
-        return this.a * this.b;
-    },  
-
-    check() {
-        if (typeof this.a === 'undefined' || typeof this.b === 'undefined') {
-            this.read();
-        }
+    showStep: function() { // показывает текущую ступеньку
+      alert( this.step );
+      return this;
     }
-}
-
-
-alert(calculator.mul());
+  };
